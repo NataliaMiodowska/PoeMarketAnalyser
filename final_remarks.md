@@ -3,3 +3,6 @@
 An interesting pattern visible in the results is that the relative differences between price segments remain consistent across all leagues. Cheap items tend to be the least volatile, while mid-range items exhibit the highest volatility. The overall volatility level is also relatively similar across most leagues, with one notable exception — the Keepers League, which shows significantly higher volatility across all price segments, reaching levels of approximately 30–40%.
 
 This can likely be explained by several factors specific to this league. In the Keepers League, asynchronous trading was introduced, allowing players to buy and sell non-currency items without directly meeting in a shared instance. This change may have increased market activity and liquidity. Additionally, new unique items were introduced, which led to the emergence of new meta builds. As players gradually discovered new item combinations, this likely contributed to increased fluctuations in item prices.
+
+**low inflation rate**
+Settlers- significantly longer duration. A longer league may allow the in-game economy more time to stabilise as supply and demand gradually reach equilibrium. As a result, price dynamics slow down and inflation pressure decreases over time.
