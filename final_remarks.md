@@ -1,8 +1,15 @@
 
-**Volatality**
-An interesting pattern visible in the results is that the relative differences between price segments remain consistent across all leagues. Cheap items tend to be the least volatile, while mid-range items exhibit the highest volatility. The overall volatility level is also relatively similar across most leagues, with one notable exception — the Keepers League, which shows significantly higher volatility across all price segments, reaching levels of approximately 30–40%.
 
-This can likely be explained by several factors specific to this league. In the Keepers League, asynchronous trading was introduced, allowing players to buy and sell non-currency items without directly meeting in a shared instance. This change may have increased market activity and liquidity. Additionally, new unique items were introduced, which led to the emergence of new meta builds. As players gradually discovered new item combinations, this likely contributed to increased fluctuations in item prices.
+## Final Remarks
 
-**low inflation rate**
-Settlers- significantly longer duration. A longer league may allow the in-game economy more time to stabilise as supply and demand gradually reach equilibrium. As a result, price dynamics slow down and inflation pressure decreases over time.
+The analyses presented in this study reveal that the economy of **Path of Exile** leagues follows a relatively consistent lifecycle despite structural differences between individual leagues. At the beginning of each league, the market is characterised by limited supply, strong player demand, and high price volatility. This launch phase is followed by a period of gradual stabilisation as more items enter the market and trading activity increases.
+
+Over time, declining player population becomes an important factor shaping market behaviour. As the number of active players decreases, inflationary pressure on Chaos Orbs tends to increase, while overall market activity gradually slows down. This relationship suggests that player activity plays a central role in determining the balance between supply and demand within the in-game economy.
+
+Although the general dynamics remain similar, the analysed leagues exhibit clear structural differences. Some leagues are characterised by higher overall market value and the presence of expensive items, while others display more active trading with a larger number of lower-value transactions. These structural differences are clearly visible in the PCA analysis and clustering results, which identify several distinct types of league economies.
+
+Another important observation is the presence of recurring price patterns across item segments. High-value items tend to exhibit stronger fluctuations and larger price differences between leagues, while cheaper items remain relatively stable. At the same time, certain items repeatedly experience strong early-league price increases, indicating that predictable investment opportunities may exist in the early stages of a league.
+
+Overall, the results suggest that the **Path of Exile** economy combines predictable macro-level dynamics with league-specific structural characteristics. While the general lifecycle of a league economy remains consistent, differences in player behaviour, game mechanics, and market structure can significantly influence price levels, volatility, and inflation patterns within individual leagues.
+
+These findings demonstrate that virtual game economies can exhibit complex economic dynamics similar to real-world markets, including inflation, volatility, and structural segmentation. As online games continue to develop increasingly sophisticated trading systems, understanding these dynamics may provide valuable insights not only for game design but also for broader studies of digital economies.
