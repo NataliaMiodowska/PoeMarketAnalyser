@@ -40,6 +40,7 @@ The specific objectives are:
 6. Investigate the relationship between player activity and economic indicators such as prices, currency purchasing power, and market stability.
 7. Compare different leagues using aggregated economic indicators.
 8. Identify similarities between leagues using clustering techniques.
+9. Evaluate whether historically observed early-league price spikes can be used to predict profitable early investments in newly released leagues.
 
 ---
 
@@ -134,5 +135,10 @@ The results will help identify:
 * how player activity changes throughout the league lifecycle,
 * whether changes in player activity correlate with economic indicators such as prices, currency purchasing power, or market stability.
 
+## Case study: Early economy of the Mirage league
+
+In addition to the historical league analysis, an additional case study was conducted for the newly released **Mirage** league. Since only the first days of market data were available, the analysis focuses on the early-stage economy of the league.
+
+Using the analytical framework developed in the project, the early economic indicators of Mirage were compared with the early phases of previous leagues. Additionally, predictions derived from the historical analysis of early-league price spikes were evaluated by examining whether the previously identified high-growth items also experienced significant price increases during the first days of the Mirage league.
 
 
