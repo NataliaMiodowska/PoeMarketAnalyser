@@ -46,7 +46,7 @@ The specific objectives are:
 
 ## Dataset Description
 
-The dataset used in this project consists of two main components:
+The dataset used in this project consists of three main components:
 
 1. Items dataset
 2. Currency dataset
