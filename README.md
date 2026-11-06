@@ -1,12 +1,15 @@
 # PoeMarketAnalyser
 
 ### Key results
- - 10,797 items, 6 leagues, 4,163 daily player records
+- 10,797 items, 6 leagues, 4,163 daily player records
 - Player count vs currency index: Pearson r from −0.54 to −0.93 in 4 of 6 leagues (Ancestor −0.93, Settlers −0.67, Affliction −0.61, Keepers −0.54), confirmed by Spearman. In the other 2 leagues (Mercenaries r = −0.36, Necropolis r = −0.10) there is no consistent relationship (Spearman −0.02 and +0.41), so the effect is not universal.
 - PCA (6 leagues): 3 components ≈ 89% variance; K-means and Ward clustering agree on 4 market types 
 - Mirage case study: new league forms its own cluster; 2 of 10 predicted gems in top-20 price rises (small sample)
+
 ![CPI](images/CPI.png)
+
 ![PCA biplot](images/pca_biplot.png)
+
 ![Market clusters](images/clusters.png)
 
 Full conclusions: [Final remarks](final_remarks.md)
@@ -21,7 +24,7 @@ Full conclusions: [Final remarks](final_remarks.md)
 ### How to run
 - Python 3.11
 - Install dependencies: `pip install -r requirements.txt`
-- Data is included in the `data/` folder (raw and processed files). Item and currency prices come from [https://poe.ninja/poe1/data], player counts from Steam statistics.
+- Data is included in the `data/` folder (raw and processed files). Item and currency prices come from [poe.ninja](https://poe.ninja/poe1/data), player counts from Steam statistics.
 - Run the notebooks in `notebooks/` in order, from 01 to 09.
 
 ### Project context
@@ -168,3 +171,9 @@ In addition to the historical league analysis, an additional case study was cond
 
 Using the analytical framework developed in the project, the early economic indicators of Mirage were compared with the early phases of previous leagues. Additionally, predictions derived from the historical analysis of early-league price spikes were evaluated by examining whether the previously identified high-growth items also experienced significant price increases during the first days of the Mirage league.
 
+
+---
+## What I would do next
+- **Detrending**: remove the trend from the price and player series (e.g. first differences or a rolling baseline) and re-test the player–index relationship, to check whether the correlations survive stationarity.
+- **Supervised model for early-league price spikes**: predict which items will spike in the first days of a league, with a time-based split and a baseline to beat.
+- **More leagues** and a structured evaluation of the Mirage predictions once more data is available.
