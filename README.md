@@ -1,6 +1,21 @@
-
-
 # PoeMarketAnalyser
+
+## Key results
+  - 10,797 items, 6 leagues, 4,163 daily player records
+  - Player count vs currency index: Pearson r −0.54 to −0.93 in 4 of 6 leagues (Spearman cross-check); state the other 2 honestly
+  - PCA: 3 components ≈ 89% variance; K-means and Ward clustering agree on 4 market types
+  - Mirage case study: new league forms its own cluster; 2 of 10 predicted gems in top-20 price rises (small sample)
+
+## Limitations 
+6 leagues = small n; correlation ≠ causation; non-stationary time series (no detrending yet); balance changes as external factor; 7-day Mirage window
+
+## How to run 
+Python version, `pip install -r requirements.txt`, notebook order 01→09
+
+## Project context
+postgraduate final project, Data Science Postgraduate Studies at Wrocław University of Economics and Business, defended June 2026
+
+---
 
 ## Introduction
 
@@ -46,7 +61,7 @@ The specific objectives are:
 
 ## Dataset Description
 
-The dataset used in this project consists of three main components:
+The dataset used in this project consists of two main components:
 
 1. Items dataset
 2. Currency dataset
@@ -140,5 +155,4 @@ The results will help identify:
 In addition to the historical league analysis, an additional case study was conducted for the newly released **Mirage** league. Since only the first days of market data were available, the analysis focuses on the early-stage economy of the league.
 
 Using the analytical framework developed in the project, the early economic indicators of Mirage were compared with the early phases of previous leagues. Additionally, predictions derived from the historical analysis of early-league price spikes were evaluated by examining whether the previously identified high-growth items also experienced significant price increases during the first days of the Mirage league.
-
 

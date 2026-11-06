@@ -1,5 +1,3 @@
-
-
 ## Final Remarks
 
 The analyses presented in this study reveal that the economy of **Path of Exile** leagues follows a relatively consistent lifecycle despite structural differences between individual leagues. At the beginning of each league, the market is characterised by limited supply, strong player demand, and high price volatility. This launch phase is followed by a period of gradual stabilisation as more items enter the market and trading activity increases.
