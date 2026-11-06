@@ -1,19 +1,31 @@
 # PoeMarketAnalyser
 
 ### Key results
-  - 10,797 items, 6 leagues, 4,163 daily player records
-  - Player count vs currency index: Pearson r −0.54 to −0.93 in 4 of 6 leagues (Spearman cross-check); state the other 2 honestly
-  - PCA: 3 components ≈ 89% variance; K-means and Ward clustering agree on 4 market types
-  - Mirage case study: new league forms its own cluster; 2 of 10 predicted gems in top-20 price rises (small sample)
+ - 10,797 items, 6 leagues, 4,163 daily player records
+- Player count vs currency index: Pearson r from −0.54 to −0.93 in 4 of 6 leagues (Ancestor −0.93, Settlers −0.67, Affliction −0.61, Keepers −0.54), confirmed by Spearman. In the other 2 leagues (Mercenaries r = −0.36, Necropolis r = −0.10) there is no consistent relationship (Spearman −0.02 and +0.41), so the effect is not universal.
+- PCA (6 leagues): 3 components ≈ 89% variance; K-means and Ward clustering agree on 4 market types 
+- Mirage case study: new league forms its own cluster; 2 of 10 predicted gems in top-20 price rises (small sample)
+![CPI](images/CPI.png)
+![PCA biplot](images/pca_biplot.png)
+![Market clusters](images/clusters.png)
+
+Full conclusions: [Final remarks](final_remarks.md)
 
 ### Limitations 
-6 leagues = small n; correlation ≠ causation; non-stationary time series (no detrending yet); balance changes as external factor; 7-day Mirage window
+- Only 6 leagues, so the sample is small
+- Correlation does not imply causation
+- Non-stationary time series (no detrending yet)
+- Balance changes by the developers are an external factor that is not modelled
+- The Mirage case study covers only 7 days
 
-### How to run 
-Python version, `pip install -r requirements.txt`, notebook order 01→09
+### How to run
+- Python 3.11
+- Install dependencies: `pip install -r requirements.txt`
+- Data is included in the `data/` folder (raw and processed files). Item and currency prices come from [https://poe.ninja/poe1/data], player counts from Steam statistics.
+- Run the notebooks in `notebooks/` in order, from 01 to 09.
 
 ### Project context
-postgraduate final project, Data Science Postgraduate Studies at Wrocław University of Economics and Business, defended June 2026
+final project, Data Science Postgraduate Studies at Wrocław University of Economics and Business, defended June 2026
 
 ---
 
@@ -61,7 +73,7 @@ The specific objectives are:
 
 ## Dataset Description
 
-The dataset used in this project consists of two main components:
+The dataset used in this project consists of three main components:
 
 1. Items dataset
 2. Currency dataset
@@ -138,11 +150,11 @@ The dataset exhibits several important characteristics:
 3. Each league represents a separate economic environment with its own supply and demand dynamics.
 
 ---
-## Expected Outcomes
+## Research Questions
 
-The results will help identify:
+The project aimed to answer the following questions:
 
-* how item prices evolve during a league,
+* How item prices evolve during a league,
 * how stable the market is,
 * how the purchasing power of currency changes over time,
 * whether leagues exhibit similar economic structures,
