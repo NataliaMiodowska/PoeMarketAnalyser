@@ -1,18 +1,18 @@
 # PoeMarketAnalyser
 
-## Key results
+### Key results
   - 10,797 items, 6 leagues, 4,163 daily player records
   - Player count vs currency index: Pearson r −0.54 to −0.93 in 4 of 6 leagues (Spearman cross-check); state the other 2 honestly
   - PCA: 3 components ≈ 89% variance; K-means and Ward clustering agree on 4 market types
   - Mirage case study: new league forms its own cluster; 2 of 10 predicted gems in top-20 price rises (small sample)
 
-## Limitations 
+### Limitations 
 6 leagues = small n; correlation ≠ causation; non-stationary time series (no detrending yet); balance changes as external factor; 7-day Mirage window
 
-## How to run 
+### How to run 
 Python version, `pip install -r requirements.txt`, notebook order 01→09
 
-## Project context
+### Project context
 postgraduate final project, Data Science Postgraduate Studies at Wrocław University of Economics and Business, defended June 2026
 
 ---
