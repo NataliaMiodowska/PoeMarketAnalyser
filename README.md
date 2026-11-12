@@ -30,8 +30,37 @@ Full conclusions: [Final remarks](final_remarks.md)
 - **Player counts are intentionally not included.** SteamDB's [FAQ](https://steamdb.info/faq/) prohibits publishing its data in its entirety, so I do not redistribute the player series in this repository or in the release. The counts come from the [SteamDB chart for Path of Exile](https://steamdb.info/app/238960/charts/), where the daily series can be downloaded. To reproduce the player analysis (notebooks 01 and 06–09), download it yourself and prepare:
   - `data/players_data_raw/players_daily.csv` with the columns `League`, `DateTime`, `Players` (semicolon-separated, one row per league and day, as read in notebook 01),
   - `data/players_data_raw/players_mirage.csv` with the columns `League`, `Date`, `Players` for the Mirage case study (notebook 09).
+- **Mirage item prices are not included either.** They were collected from the public [poe.ninja API](https://poe.ninja/docs/api) during the first days of the league, and poe.ninja does not state terms for redistributing API data. To reproduce the Mirage case study (notebook 09), prepare `data/items_data_raw/Mirage.items.csv` with the same columns as the other item files (`League;Date;Id;Type;Name;BaseType;Variant;Links;Value;Confidence`).
 - Run the notebooks in `notebooks/` in order, from 01 to 09. Notebook 01 builds all processed files from the raw ones.
-- Item and currency prices come from [poe.ninja](https://poe.ninja/poe1/data).
+- Item and currency prices come from [poe.ninja](https://poe.ninja/poe1/data), see [Data sources and licence](#data-sources-and-licence).
+
+## Data sources and licence
+
+**Item and currency prices:** [poe.ninja](https://poe.ninja), *Raw Economy Data Dumps*
+(<https://poe.ninja/poe1/data>), licensed under
+[CC BY-SA 3.0](https://creativecommons.org/licenses/by-sa/3.0/).
+
+- The files in the [v1.0-data release](https://github.com/NataliaMiodowska/PoeMarketAnalyser/releases/tag/v1.0-data)
+  for the six analysed leagues (`<League>.items.csv`, `<League>.currency.csv`) are unmodified copies
+  of the poe.ninja dumps.
+- The files in `powerbi/data/`, the Power BI report (`powerbi/PoE_Market.pbix`, `powerbi/PoE_Market.pdf`)
+  and the charts in `images/` are adapted from these dumps. Changes made in notebook 01: leagues merged and
+  limited to the six analysed leagues; currency rates with Low confidence removed and only rates paid in
+  Chaos Orb kept; for items, the Id, BaseType and Variant columns dropped, 5- and 6-link versions removed,
+  invalid item types and records with missing values removed, zero values removed. Changes made in
+  `powerbi/export_for_powerbi.py`: duplicate item prices collapsed with the median; prices aggregated to
+  weekly medians per item and to daily league indicators (currency index, market value).
+- These adapted data files are shared under the same licence,
+  [CC BY-SA 3.0](https://creativecommons.org/licenses/by-sa/3.0/).
+
+**Mirage item prices (notebook 09):** collected from the public [poe.ninja API](https://poe.ninja/docs/api)
+during the first days of the league. They are not covered by the CC BY-SA licence above and are not
+redistributed (see *How to run*).
+
+**Player counts:** [SteamDB](https://steamdb.info/app/238960/charts/), not redistributed (see *How to run*).
+
+Path of Exile is a trademark of Grinding Gear Games. This project is not affiliated with
+Grinding Gear Games or poe.ninja.
 
 ## Project context
 final project, Data Science Postgraduate Studies at Wrocław University of Economics and Business, defended March 2026
