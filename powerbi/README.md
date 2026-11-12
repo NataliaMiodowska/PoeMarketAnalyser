@@ -2,7 +2,7 @@
 
 Power BI Desktop version: 2.149.1429.0 64-bit (November 2025)
 
-**Status: in progress.** Data model and DAX measures are done and validated; report pages are not built yet.
+**Status: in progress.** Data model and DAX measures are done and validated; report pages are built and being finalised (texts, screenshots).
 
 ## Data
 
@@ -16,9 +16,10 @@ The report loads the aggregated CSV files from `powerbi/data/`, prepared by `exp
 | `fact_item_daily_top` | 254,936 | league × day × item, top items only: daily price |
 | `dim_item` | 8,803 | item, 37 categories |
 | `dim_league` | 6 | league dates and cluster |
-| `dim_date` | 928 | calendar table (DAX `CALENDAR`), 2023-08-18 to 2026-03-02, marked as date table |
+| `dim_date` | 928 | calendar table (DAX `CALENDAR`), 2023-08-18 to 2026-03-02, marked as date table; calculated columns `phase` and `league_day` taken from `fact_daily_league` |
 
 Star schema: facts are related to the dimensions many-to-one with single-direction filtering.
+Leagues do not overlap in time, so each date belongs to one league at most. This is why the league phase is stored in `dim_date`: a phase slicer then filters all fact tables, and every phase exists in every league.
 
 ## DAX measures
 
@@ -59,3 +60,5 @@ python powerbi/validation/validation.py
   so average player numbers can differ slightly from `population_economy.csv`.
 - Duplicate item prices were collapsed with the median during the export, so median price,
   top 1% share and market value can differ slightly from notebook 07.
+- Weekly prices are assigned to a phase by the week's start date, so phase boundaries for Median Price
+  and Top 1% Share can be shifted by a few days.
