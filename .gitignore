@@ -174,4 +174,8 @@ cython_debug/
 .pypirc
 
 data/
+!powerbi/data/
 
+
+# Private notes
+powerbi_plan.md

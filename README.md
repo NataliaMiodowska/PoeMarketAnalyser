@@ -24,8 +24,14 @@ Full conclusions: [Final remarks](final_remarks.md)
 ### How to run
 - Python 3.11
 - Install dependencies: `pip install -r requirements.txt`
-- Data is included in the `data/` folder (raw and processed files). Item and currency prices come from [poe.ninja](https://poe.ninja/poe1/data), player counts from Steam statistics.
-- Run the notebooks in `notebooks/` in order, from 01 to 09.
+- Data is not stored in the repository (it is about 6 GB). The raw item and currency prices (about 2.2 GB) are available as assets of the [v1.0-data release](https://github.com/NataliaMiodowska/PoeMarketAnalyser/releases/tag/v1.0-data). Download them and place the files in:
+  - `data/items_data_raw/` (`<League>.items.csv`)
+  - `data/currency_data_raw/` (`<League>.currency.csv`)
+- **Player counts are intentionally not included.** SteamDB's [FAQ](https://steamdb.info/faq/) prohibits publishing its data in its entirety, so I do not redistribute the player series in this repository or in the release. The counts come from the [SteamDB chart for Path of Exile](https://steamdb.info/app/238960/charts/), where the daily series can be downloaded. To reproduce the player analysis (notebooks 01 and 06–09), download it yourself and prepare:
+  - `data/players_data_raw/players_daily.csv` with the columns `League`, `DateTime`, `Players` (semicolon-separated, one row per league and day, as read in notebook 01),
+  - `data/players_data_raw/players_mirage.csv` with the columns `League`, `Date`, `Players` for the Mirage case study (notebook 09).
+- Run the notebooks in `notebooks/` in order, from 01 to 09. Notebook 01 builds all processed files from the raw ones.
+- Item and currency prices come from [poe.ninja](https://poe.ninja/poe1/data).
 
 ### Project context
 final project, Data Science Postgraduate Studies at Wrocław University of Economics and Business, defended June 2026
@@ -134,7 +140,7 @@ Unlike traditional economies, Path of Exile uses multiple items as currencies. T
 
 The players dataset describes the daily number of active players during different Path of Exile leagues. These data provide insight into player activity over time and allow the analysis of how the player population evolves throughout the duration of a league. Each record represents the number of players recorded for a specific league on a given day.
 
-The player activity data are obtained from Steam statistics. Although Path of Exile can also be played through a standalone client, Steam accounts for the majority of the player base and therefore provides a sufficiently representative sample. Since the analysis focuses on comparisons between leagues using the same data source, the dataset remains consistent and comparable across the entire study period.
+The player activity data are obtained from Steam statistics published by [SteamDB](https://steamdb.info/app/238960/charts/). Although Path of Exile can also be played through a standalone client, Steam accounts for the majority of the player base and therefore provides a sufficiently representative sample. Since the analysis focuses on comparisons between leagues using the same data source, the dataset remains consistent and comparable across the entire study period.
 
 | Column  | Description                                    |
 | ------- | ---------------------------------------------- |
