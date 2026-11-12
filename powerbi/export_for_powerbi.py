@@ -1,5 +1,7 @@
 """Export aggregated tables for the Power BI dashboard.
 
+Extension added after the university project. Written by Claude Code (AI assistant).
+
 Reads the processed files created by notebooks 01-07 (folder `data/`) and writes
 five small CSV files to `powerbi/data/`:
 
