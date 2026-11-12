@@ -1,6 +1,6 @@
 # PoeMarketAnalyser
 
-### Key results
+## Key results
 - 10,797 items, 6 leagues, 4,163 daily player records
 - Player count vs currency index: Pearson r from −0.54 to −0.93 in 4 of 6 leagues (Ancestor −0.93, Settlers −0.67, Affliction −0.61, Keepers −0.54), confirmed by Spearman. In the other 2 leagues (Mercenaries r = −0.36, Necropolis r = −0.10) there is no consistent relationship (Spearman −0.02 and +0.41), so the effect is not universal.
 - PCA (6 leagues): 3 components ≈ 89% variance; K-means and Ward clustering agree on 4 market types 
@@ -14,14 +14,14 @@
 
 Full conclusions: [Final remarks](final_remarks.md)
 
-### Limitations 
+## Limitations 
 - Only 6 leagues, so the sample is small
 - Correlation does not imply causation
 - Non-stationary time series (no detrending yet)
 - Balance changes by the developers are an external factor that is not modelled
 - The Mirage case study covers only 7 days
 
-### How to run
+## How to run
 - Python 3.11
 - Install dependencies: `pip install -r requirements.txt`
 - Data is not stored in the repository (it is about 6 GB). The raw item and currency prices (about 2.2 GB) are available as assets of the [v1.0-data release](https://github.com/NataliaMiodowska/PoeMarketAnalyser/releases/tag/v1.0-data). Download them and place the files in:
@@ -33,7 +33,7 @@ Full conclusions: [Final remarks](final_remarks.md)
 - Run the notebooks in `notebooks/` in order, from 01 to 09. Notebook 01 builds all processed files from the raw ones.
 - Item and currency prices come from [poe.ninja](https://poe.ninja/poe1/data).
 
-### Project context
+## Project context
 final project, Data Science Postgraduate Studies at Wrocław University of Economics and Business, defended June 2026
 
 ---
