@@ -42,9 +42,9 @@ final project, Data Science Postgraduate Studies at Wrocław University of Econo
 | --- | --- | --- |
 | **University project** (postgraduate final project) | `notebooks/` 01–09, `final_remarks.md`, all analyses, charts and conclusions | Completed and defended in March 2026. The analytical work was finished with the notebook commits of March 2026 (last: [`81a8bba`](https://github.com/NataliaMiodowska/PoeMarketAnalyser/commit/81a8bba)). |
 | **README edits after the defence** | Key results, limitations, how to run, project context, charts embedded in the README | Presentation only. No new data, analyses or charts were created; the charts in `images/` come from the notebooks. |
-| **Extension after the university project** | `powerbi/`: aggregated data export and the Power BI dashboard built on top of it | Not part of the graded project. Added later to show how the project is being developed further. **Status: in progress.** The data export (`export_for_powerbi.py` and the aggregated CSV files in `powerbi/data/`) is ready; the Power BI report itself (`.pbix`) is not built yet. |
+| **Extension after the university project** | `powerbi/`: aggregated data export and the Power BI dashboard built on top of it | Not part of the graded project. Added later to show how the project is being developed further. **Status: in progress.** The data export (`export_for_powerbi.py` and the aggregated CSV files in `powerbi/data/`), the data model and the DAX measures (validated against pandas, see [`powerbi/README.md`](powerbi/README.md)) are ready; the report pages are not built yet. |
 
-`powerbi/export_for_powerbi.py` was written by Claude Code (Anthropic's AI coding assistant).
+`powerbi/export_for_powerbi.py` and `powerbi/validation/validation.py` were written by Claude Code (Anthropic's AI coding assistant).
 
 ---
 
