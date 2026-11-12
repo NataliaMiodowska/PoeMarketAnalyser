@@ -1,0 +1,7 @@
+league,start_date,end_date,n_days,cluster
+Ancestor,2023-08-18,2023-12-05,110,Cluster 4
+Affliction,2023-12-08,2024-03-26,110,Cluster 2
+Necropolis,2024-03-29,2024-07-23,117,Cluster 1
+Settlers,2024-07-26,2025-06-09,319,Cluster 3
+Mercenaries,2025-06-13,2025-10-27,137,Cluster 3
+Keepers,2025-10-31,2026-03-02,123,Cluster 1

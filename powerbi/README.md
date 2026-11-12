@@ -1,0 +1,1 @@
+Version: 2.149.1429.0 64-bit (listopad 2025)
