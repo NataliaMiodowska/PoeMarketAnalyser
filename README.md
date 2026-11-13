@@ -14,6 +14,18 @@
 
 Full conclusions: [Final remarks](final_remarks.md)
 
+## Power BI dashboard
+
+An extension added after the university project: a Power BI report built on aggregates of the project data
+(Power Query, star-schema model, 11 DAX measures validated against pandas). Three pages answer three questions:
+how the market changes during a league, which categories and items drive it, and whether all six leagues behave
+the same; a drill-through page shows the price history of a single item.
+
+![Power BI: League comparison](powerbi/screenshots/03_league_comparison.png)
+
+Report pages, data model, measures and validation: [`powerbi/README.md`](powerbi/README.md).
+Report file: [`PoE_Market.pbix`](powerbi/PoE_Market.pbix), PDF export: [`PoE_Market.pdf`](powerbi/PoE_Market.pdf).
+
 ## Limitations 
 - Only 6 leagues, so the sample is small
 - Correlation does not imply causation
@@ -27,7 +39,7 @@ Full conclusions: [Final remarks](final_remarks.md)
 - Data is not stored in the repository (it is about 6 GB). The raw item and currency prices (about 2.2 GB) are available as assets of the [v1.0-data release](https://github.com/NataliaMiodowska/PoeMarketAnalyser/releases/tag/v1.0-data). Download them and place the files in:
   - `data/items_data_raw/` (`<League>.items.csv`)
   - `data/currency_data_raw/` (`<League>.currency.csv`)
-- **Player counts are intentionally not included.** SteamDB's [FAQ](https://steamdb.info/faq/) prohibits publishing its data in its entirety, so I do not redistribute the player series in this repository or in the release. The counts come from the [SteamDB chart for Path of Exile](https://steamdb.info/app/238960/charts/), where the daily series can be downloaded. To reproduce the player analysis (notebooks 01 and 06–09), download it yourself and prepare:
+- **The raw player series is intentionally not included.** SteamDB's [FAQ](https://steamdb.info/faq/) prohibits publishing its data in its entirety, so I do not redistribute the downloaded player series (`players_daily.csv`, `players_mirage.csv`) in this repository or in the release. The only player counts in the repository are the daily values for the periods of the six analysed leagues used by the Power BI report (columns `players` and `players_norm` in `powerbi/data/fact_daily_league.csv`, and the same values inside `powerbi/PoE_Market.pbix`). The counts come from the [SteamDB chart for Path of Exile](https://steamdb.info/app/238960/charts/), where the daily series can be downloaded. To reproduce the player analysis (notebooks 01 and 06–09), download it yourself and prepare:
   - `data/players_data_raw/players_daily.csv` with the columns `League`, `DateTime`, `Players` (semicolon-separated, one row per league and day, as read in notebook 01),
   - `data/players_data_raw/players_mirage.csv` with the columns `League`, `Date`, `Players` for the Mirage case study (notebook 09).
 - **Mirage item prices are not included either.** They were collected from the public [poe.ninja API](https://poe.ninja/docs/api) during the first days of the league, and poe.ninja does not state terms for redistributing API data. To reproduce the Mirage case study (notebook 09), prepare `data/items_data_raw/Mirage.items.csv` with the same columns as the other item files (`League;Date;Id;Type;Name;BaseType;Variant;Links;Value;Confidence`).
@@ -57,7 +69,9 @@ Full conclusions: [Final remarks](final_remarks.md)
 during the first days of the league. They are not covered by the CC BY-SA licence above and are not
 redistributed (see *How to run*).
 
-**Player counts:** [SteamDB](https://steamdb.info/app/238960/charts/), not redistributed (see *How to run*).
+**Player counts:** [SteamDB](https://steamdb.info/app/238960/charts/) (the figures come from the Steam API). The raw series
+is not redistributed; the Power BI files contain only the daily counts for the six analysed league periods (see *How to run*).
+These player columns are not covered by the CC BY-SA licence above.
 
 Path of Exile is a trademark of Grinding Gear Games. This project is not affiliated with
 Grinding Gear Games or poe.ninja.
@@ -71,7 +85,7 @@ final project, Data Science Postgraduate Studies at Wrocław University of Econo
 | --- | --- | --- |
 | **University project** (postgraduate final project) | `notebooks/` 01–09, `final_remarks.md`, all analyses, charts and conclusions | Completed and defended in March 2026. The analytical work was finished with the notebook commits of March 2026 (last: [`81a8bba`](https://github.com/NataliaMiodowska/PoeMarketAnalyser/commit/81a8bba)). |
 | **README edits after the defence** | Key results, limitations, how to run, project context, charts embedded in the README | Presentation only. No new data, analyses or charts were created; the charts in `images/` come from the notebooks. |
-| **Extension after the university project** | `powerbi/`: aggregated data export and the Power BI dashboard built on top of it | Not part of the graded project. Added later to show how the project is being developed further. **Status: in progress.** The data export (`export_for_powerbi.py` and the aggregated CSV files in `powerbi/data/`), the data model and the DAX measures (validated against pandas, see [`powerbi/README.md`](powerbi/README.md)) are ready; the report pages are built and being finalised. |
+| **Extension after the university project** | `powerbi/`: aggregated data export and the Power BI dashboard built on top of it | Not part of the graded project. Added later to show how the project is being developed further. **Status: completed** (November 2026): data export (`export_for_powerbi.py` and the aggregated CSV files in `powerbi/data/`), data model, DAX measures validated against pandas, three report pages with a drill-through page, PDF export and screenshots; see [`powerbi/README.md`](powerbi/README.md). |
 
 `powerbi/export_for_powerbi.py` and `powerbi/validation/validation.py` were written by Claude Code (Anthropic's AI coding assistant).
 
